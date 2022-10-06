@@ -8,7 +8,7 @@
 |**Floorplan Used**<br>List Report Object Page V4|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/library/
-|**Module Name**<br>zlabook|
+|**Module Name**<br>zlabbook|
 |**Application Title**<br>Books|
 |**Namespace**<br>zlab|
 |**UI5 Theme**<br>sap_horizon|
@@ -18,7 +18,7 @@
 |**Add Eslint configuration**<br>False|
 |**Main Entity**<br>Books|
 
-## zlabook
+## zlabbook
 
 A Fiori application.
 
@@ -26,7 +26,7 @@ A Fiori application.
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply start your CAP project and navigate to the following location in your browser:
 
-http://localhost:4004/zlabook/webapp/index.html
+http://localhost:4004/zlabbook/webapp/index.html
 
 - It is also possible to run the application using mock data that reflects the OData Service URL supplied during application generation.  In order to run the application with Mock Data, run the following from the generated app root folder:
 

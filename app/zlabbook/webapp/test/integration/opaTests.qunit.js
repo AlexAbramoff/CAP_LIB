@@ -1,15 +1,15 @@
 sap.ui.require(
     [
         'sap/fe/test/JourneyRunner',
-        'zlab/zlabook/test/integration/FirstJourney',
-		'zlab/zlabook/test/integration/pages/BooksList',
-		'zlab/zlabook/test/integration/pages/BooksObjectPage'
+        'zlab/zlabbook/test/integration/FirstJourney',
+		'zlab/zlabbook/test/integration/pages/BooksList',
+		'zlab/zlabbook/test/integration/pages/BooksObjectPage'
     ],
     function(JourneyRunner, opaJourney, BooksList, BooksObjectPage) {
         'use strict';
         var JourneyRunner = new JourneyRunner({
             // start index.html in web folder
-            launchUrl: sap.ui.require.toUrl('zlab/zlabook') + '/index.html'
+            launchUrl: sap.ui.require.toUrl('zlab/zlabbook') + '/index.html'
         });
 
        

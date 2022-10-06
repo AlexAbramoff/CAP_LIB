@@ -1,7 +1,7 @@
 {
     "_version": "1.45.0",
     "sap.app": {
-        "id": "zlab.zlabook",
+        "id": "zlab.zlabbook",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -71,7 +71,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "zlab.zlabook.i18n.i18n"
+                    "bundleName": "zlab.zlabbook.i18n.i18n"
                 }
             },
             "": {

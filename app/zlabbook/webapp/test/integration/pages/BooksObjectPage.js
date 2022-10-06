@@ -8,7 +8,7 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
 
     return new ObjectPage(
         {
-            appId: 'zlab.zlabook',
+            appId: 'zlab.zlabbook',
             componentId: 'BooksObjectPage',
             entitySet: 'Books'
         },

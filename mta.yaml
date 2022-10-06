@@ -68,8 +68,8 @@ modules:
       name: zlabzlabreader
       target-path: resources/
     - artifacts:
-      - zlabzlabook.zip
-      name: zlabzlabook
+      - zlabzlabbook.zip
+      name: zlabzlabbook
       target-path: resources/
 - name: zlabzlabreader
   type: html5
@@ -81,9 +81,9 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
-- name: zlabzlabook
+- name: zlabzlabbook
   type: html5
-  path: app/zlabook
+  path: app/zlabbook
   build-parameters:
     build-result: dist
     builder: custom
