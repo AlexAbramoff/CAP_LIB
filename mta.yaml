@@ -71,6 +71,14 @@ modules:
       - zlabzlabbook.zip
       name: zlabzlabbook
       target-path: resources/
+    - artifacts:
+      - zlabzlabauthor.zip
+      name: zlabzlabauthor
+      target-path: resources/
+    - artifacts:
+      - zlabzlabbooking.zip
+      name: zlabzlabbooking
+      target-path: resources/
 - name: zlabzlabreader
   type: html5
   path: app/zlabreader
@@ -84,6 +92,26 @@ modules:
 - name: zlabzlabbook
   type: html5
   path: app/zlabbook
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: zlabzlabauthor
+  type: html5
+  path: app/zlabauthor
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: zlabzlabbooking
+  type: html5
+  path: app/zlabbooking
   build-parameters:
     build-result: dist
     builder: custom

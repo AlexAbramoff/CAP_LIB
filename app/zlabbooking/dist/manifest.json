@@ -1,7 +1,7 @@
 {
     "_version": "1.45.0",
     "sap.app": {
-        "id": "zlab.zlabbook",
+        "id": "zlab.zlabbooking",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,11 +13,11 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.7.5",
-            "toolsId": "eef80e25-f20a-4514-9686-ce34fd4bf605"
+            "toolsId": "fe4c2c4b-2948-49ae-abea-5cce0146c587"
         },
         "dataSources": {
             "mainService": {
-                "uri": "/library/",
+                "uri": "library/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
@@ -37,19 +37,19 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "zlab-zlabbook-inbound": {
+                "zlab-zlabbooking-inbound": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "Books",
+                    "semanticObject": "Booking",
                     "action": "manage",
                     "title": "{{flpTitle}}",
                     "subTitle": "{{flpSubtitle}}",
-                    "icon": "sap-icon://education",
+                    "icon": "sap-icon://course-book",
                     "indicatorDataSource": {
                         "dataSource": "mainService",
-                        "path": "/dynamic_dest/zlablibrary-app-srv/library/Books/$count",
+                        "path": "/dynamic_dest/zlablibrary-app-srv/library/Booking/$count",
                         "refresh": 10
                     }
                 }
@@ -75,7 +75,7 @@
     "sap.ui5": {
         "flexEnabled": true,
         "dependencies": {
-            "minUI5Version": "1.106.1",
+            "minUI5Version": "1.107.0",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
@@ -91,7 +91,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "zlab.zlabbook.i18n.i18n"
+                    "bundleName": "zlab.zlabbooking.i18n.i18n"
                 }
             },
             "": {
@@ -116,42 +116,42 @@
             "routes": [
                 {
                     "pattern": ":?query:",
-                    "name": "BooksList",
-                    "target": "BooksList"
+                    "name": "BookingList",
+                    "target": "BookingList"
                 },
                 {
-                    "pattern": "Books({key}):?query:",
-                    "name": "BooksObjectPage",
-                    "target": "BooksObjectPage"
+                    "pattern": "Booking({key}):?query:",
+                    "name": "BookingObjectPage",
+                    "target": "BookingObjectPage"
                 }
             ],
             "targets": {
-                "BooksList": {
+                "BookingList": {
                     "type": "Component",
-                    "id": "BooksList",
+                    "id": "BookingList",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "Books",
+                            "entitySet": "Booking",
                             "variantManagement": "Page",
                             "navigation": {
-                                "Books": {
+                                "Booking": {
                                     "detail": {
-                                        "route": "BooksObjectPage"
+                                        "route": "BookingObjectPage"
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "BooksObjectPage": {
+                "BookingObjectPage": {
                     "type": "Component",
-                    "id": "BooksObjectPage",
+                    "id": "BookingObjectPage",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "Books"
+                            "entitySet": "Booking"
                         }
                     }
                 }

@@ -1,7 +1,7 @@
 {
     "_version": "1.45.0",
     "sap.app": {
-        "id": "zlab.zlabbook",
+        "id": "zlab.zlabauthor",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,11 +13,11 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.7.5",
-            "toolsId": "eef80e25-f20a-4514-9686-ce34fd4bf605"
+            "toolsId": "2f1eaf7b-08c2-444c-b6d4-5d949aab2f38"
         },
         "dataSources": {
             "mainService": {
-                "uri": "/library/",
+                "uri": "library/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
@@ -37,19 +37,19 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "zlab-zlabbook-inbound": {
+                "zlab-zlabauthor-inbound": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "Books",
+                    "semanticObject": "Authors",
                     "action": "manage",
                     "title": "{{flpTitle}}",
                     "subTitle": "{{flpSubtitle}}",
-                    "icon": "sap-icon://education",
+                    "icon": "sap-icon://customer",
                     "indicatorDataSource": {
                         "dataSource": "mainService",
-                        "path": "/dynamic_dest/zlablibrary-app-srv/library/Books/$count",
+                        "path": "/dynamic_dest/zlablibrary-app-srv/library/Authors/$count",
                         "refresh": 10
                     }
                 }
@@ -75,7 +75,7 @@
     "sap.ui5": {
         "flexEnabled": true,
         "dependencies": {
-            "minUI5Version": "1.106.1",
+            "minUI5Version": "1.107.0",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {},
@@ -91,7 +91,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "zlab.zlabbook.i18n.i18n"
+                    "bundleName": "zlab.zlabauthor.i18n.i18n"
                 }
             },
             "": {
@@ -116,26 +116,49 @@
             "routes": [
                 {
                     "pattern": ":?query:",
-                    "name": "BooksList",
-                    "target": "BooksList"
+                    "name": "AuthorsList",
+                    "target": "AuthorsList"
                 },
                 {
-                    "pattern": "Books({key}):?query:",
+                    "pattern": "Authors({key}):?query:",
+                    "name": "AuthorsObjectPage",
+                    "target": "AuthorsObjectPage"
+                },
+                {
+                    "pattern": "Authors({key})/book({key2}):?query:",
                     "name": "BooksObjectPage",
                     "target": "BooksObjectPage"
                 }
             ],
             "targets": {
-                "BooksList": {
+                "AuthorsList": {
                     "type": "Component",
-                    "id": "BooksList",
+                    "id": "AuthorsList",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "Books",
+                            "entitySet": "Authors",
                             "variantManagement": "Page",
                             "navigation": {
-                                "Books": {
+                                "Authors": {
+                                    "detail": {
+                                        "route": "AuthorsObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "AuthorsObjectPage": {
+                    "type": "Component",
+                    "id": "AuthorsObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "Authors",
+                            "navigation": {
+                                "book": {
                                     "detail": {
                                         "route": "BooksObjectPage"
                                     }

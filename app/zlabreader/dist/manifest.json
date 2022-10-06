@@ -1,7 +1,7 @@
 {
     "_version": "1.45.0",
     "sap.app": {
-        "id": "zlab.zlabbook",
+        "id": "zlab.zlabreader",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,11 +13,11 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.7.5",
-            "toolsId": "eef80e25-f20a-4514-9686-ce34fd4bf605"
+            "toolsId": "bc0ee3e2-e48a-4e97-b757-8afbd2bcd4eb"
         },
         "dataSources": {
             "mainService": {
-                "uri": "/library/",
+                "uri": "library/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
@@ -37,19 +37,19 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "zlab-zlabbook-inbound": {
+                "zlab-zlabreader-inbound": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "Books",
+                    "semanticObject": "Readers",
                     "action": "manage",
                     "title": "{{flpTitle}}",
                     "subTitle": "{{flpSubtitle}}",
-                    "icon": "sap-icon://education",
+                    "icon": "sap-icon://customer",
                     "indicatorDataSource": {
                         "dataSource": "mainService",
-                        "path": "/dynamic_dest/zlablibrary-app-srv/library/Books/$count",
+                        "path": "/dynamic_dest/zlablibrary-app-srv/library/Readers/$count",
                         "refresh": 10
                     }
                 }
@@ -91,7 +91,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "zlab.zlabbook.i18n.i18n"
+                    "bundleName": "zlab.zlabreader.i18n.i18n"
                 }
             },
             "": {
@@ -116,42 +116,42 @@
             "routes": [
                 {
                     "pattern": ":?query:",
-                    "name": "BooksList",
-                    "target": "BooksList"
+                    "name": "ReadersList",
+                    "target": "ReadersList"
                 },
                 {
-                    "pattern": "Books({key}):?query:",
-                    "name": "BooksObjectPage",
-                    "target": "BooksObjectPage"
+                    "pattern": "Readers({key}):?query:",
+                    "name": "ReadersObjectPage",
+                    "target": "ReadersObjectPage"
                 }
             ],
             "targets": {
-                "BooksList": {
+                "ReadersList": {
                     "type": "Component",
-                    "id": "BooksList",
+                    "id": "ReadersList",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "Books",
+                            "entitySet": "Readers",
                             "variantManagement": "Page",
                             "navigation": {
-                                "Books": {
+                                "Readers": {
                                     "detail": {
-                                        "route": "BooksObjectPage"
+                                        "route": "ReadersObjectPage"
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "BooksObjectPage": {
+                "ReadersObjectPage": {
                     "type": "Component",
-                    "id": "BooksObjectPage",
+                    "id": "ReadersObjectPage",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "Books"
+                            "entitySet": "Readers"
                         }
                     }
                 }
